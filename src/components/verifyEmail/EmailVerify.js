@@ -6,22 +6,26 @@ import pageNotFound from "../verifyEmail/page_not_found.svg";
 import { useHistory } from "react-router-dom";
 function EmailVerify() {
   const [validUrl, setValidUrl] = useState(false);
+  const[loading, setLoading] = useState(false);
   const param = useParams();
   let history = useHistory();
   //http://localhost:3001/api/users/${param.id}/verify/${param.token}
   useEffect(() => {
     const verifyEmailUrl = async () => {
+      setLoading(true);
       try {
         await axios
           .get(
             `https://veri-project-heroku.herokuapp.com/api/users/${param.id}/verify/${param.token}`
           )
           .then((response) => {
-            console.log(response.data);
+          
+            setLoading(false);
             setValidUrl(true);
           });
       } catch (error) {
-        console.log(error);
+    
+        setLoading(false);
         setValidUrl(false);
       }
     };
@@ -29,7 +33,8 @@ function EmailVerify() {
   }, [param]);
   return (
     <div className={styles.page_con}>
-      {validUrl ? (
+      {loading && <p>Loading...</p>}
+      {!loading && validUrl ? (
         <div className={styles.page_con}>
           <h1>Email verified successfully</h1>
 
