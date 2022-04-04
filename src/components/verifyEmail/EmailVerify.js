@@ -8,12 +8,13 @@ function EmailVerify() {
   const [validUrl, setValidUrl] = useState(false);
   const param = useParams();
   let history = useHistory();
+  //http://localhost:3001/api/users/${param.id}/verify/${param.token}
   useEffect(() => {
     const verifyEmailUrl = async () => {
       try {
         await axios
           .get(
-            `http://localhost:3001/api/users/${param.id}/verify/${param.token}`
+            `https://veri-project-heroku.herokuapp.com/api/users/${param.id}/verify/${param.token}`
           )
           .then((response) => {
             console.log(response.data);

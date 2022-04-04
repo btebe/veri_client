@@ -20,11 +20,11 @@ const Register = () => {
     email: "",
     password: "",
   };
-
+//http://localhost:3001/api/users
   const onSubmitForm = async (data) => {
     try {
       setLoading(true);
-      await axios.post("http://localhost:3001/api/users", data).then((res) => {
+      await axios.post("https://veri-project-heroku.herokuapp.com/api/users", data).then((res) => {
         setLoading(false);
         setMessage(res.data.message);
       });

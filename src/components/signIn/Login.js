@@ -18,11 +18,11 @@ function Login() {
     password: "",
   };
   const showToggle = () => setShow((prev) => !prev);
-
+  //http://localhost:3001/api/auth
   const onSubmitForm = async (data) => {
     setLoading(true);
     try {
-      await axios.post("http://localhost:3001/api/auth", data).then((res) => {
+      await axios.post("https://veri-project-heroku.herokuapp.com/api/auth", data).then((res) => {
         setLoading(false);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", res.data.username);

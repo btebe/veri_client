@@ -12,11 +12,12 @@ function RequestPassReset() {
   const initialdata = {
     email: "",
   };
+  //http://localhost:3001/api/password-reset/
   const onSubmitForm = async (data) => {
     setLoading(true);
     try {
       await axios
-        .post("http://localhost:3001/api/password-reset/", data)
+        .post("https://veri-project-heroku.herokuapp.com/api/password-reset/", data)
         .then((res) => {
           setLoading(false);
           setMessage(res.data.message);

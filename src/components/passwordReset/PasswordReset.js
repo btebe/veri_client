@@ -18,6 +18,7 @@ function PasswordReset() {
   const initialdata = {
     password: "",
   };
+  //http://localhost:3001/api/password-reset/${param.id}/${param.token}
   const showToggle = () => setShow((prev) => !prev);
   const onSubmitForm = async (data) => {
     setLoading(true);
@@ -25,7 +26,7 @@ function PasswordReset() {
     try {
       await axios
         .post(
-          `http://localhost:3001/api/password-reset/${param.id}/${param.token}`,
+          `https://veri-project-heroku.herokuapp.com/api/password-reset/${param.id}/${param.token}`,
           data
         )
         .then((res) => {
