@@ -21,6 +21,11 @@
   margin-top: 10px;
   cursor: pointer;
 }
+.load {
+  font-size: 14px;
+  color: #002945;
+  padding: 15px;
+}
 
 /**
 NOT FOUND PAGE

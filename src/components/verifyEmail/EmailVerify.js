@@ -33,7 +33,7 @@ function EmailVerify() {
   }, [param]);
   return (
     <div className={styles.page_con}>
-      {loading && <p>Loading...</p>}
+      {loading && <p className={styles.load}>Loading...</p>}
       {!loading && validUrl ? (
         <div className={styles.page_con}>
           <h1>Email verified successfully</h1>
