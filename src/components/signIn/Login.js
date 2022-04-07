@@ -23,7 +23,7 @@ function Login() {
   const onSubmitForm = async (data) => {
     setLoading(true);
     try {
-      await axios.post("https://veri-project-heroku.herokuapp.com/api/auth", data).then((res) => {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}api/auth`, data).then((res) => {
         setLoading(false);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", res.data.username);

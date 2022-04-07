@@ -24,7 +24,7 @@ const Register = () => {
   const onSubmitForm = async (data) => {
     try {
       setLoading(true);
-      await axios.post("https://veri-project-heroku.herokuapp.com/api/users", data).then((res) => {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}api/users`, data).then((res) => {
         setLoading(false);
         setMessage(res.data.message);
       });

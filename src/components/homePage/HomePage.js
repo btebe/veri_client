@@ -11,6 +11,7 @@ function HomePage() {
 
   return (
     <div className={styles.home}>
+     
       <img src={welcomeSvg} className={styles.welcome_svg} />
       <h1>{user} !</h1>
 

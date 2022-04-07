@@ -31,7 +31,9 @@
 NOT FOUND PAGE
 **/
 .not_found_svg {
-  height: 200px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   margin-bottom: 30px;
 }
 .page_con h1 {

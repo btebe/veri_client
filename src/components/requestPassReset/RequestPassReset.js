@@ -17,7 +17,7 @@ function RequestPassReset() {
     setLoading(true);
     try {
       await axios
-        .post("https://veri-project-heroku.herokuapp.com/api/password-reset/", data)
+        .post(`${process.env.REACT_APP_BASE_URL}api/password-reset/`, data)
         .then((res) => {
           setLoading(false);
           setMessage(res.data.message);

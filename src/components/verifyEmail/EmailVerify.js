@@ -9,14 +9,14 @@ function EmailVerify() {
   const[loading, setLoading] = useState(false);
   const param = useParams();
   let history = useHistory();
-  //http://localhost:3001/api/users/${param.id}/verify/${param.token}
+  
   useEffect(() => {
     const verifyEmailUrl = async () => {
       setLoading(true);
       try {
         await axios
           .get(
-            `https://veri-project-heroku.herokuapp.com/api/users/${param.id}/verify/${param.token}`
+            `${process.env.REACT_APP_BASE_URL}api/users/${param.id}/verify/${param.token}`
           )
           .then((response) => {
           
